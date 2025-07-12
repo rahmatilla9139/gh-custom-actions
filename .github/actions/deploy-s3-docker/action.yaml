@@ -17,3 +17,7 @@ outputs:
 runs:
   using: docker
   image: 'Dockerfile.shell'
+  args:
+    - ${{ inputs.bucket }}
+    - ${{ inputs.bucket-region }}
+    - ${{ inputs.dist-folder }}
