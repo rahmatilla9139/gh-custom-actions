@@ -16,4 +16,4 @@ outputs:
     description: 'The URL of the deployed website'
 runs:
   using: docker
-  image: 'Dockerfile'
+  image: 'Dockerfile.shell'
