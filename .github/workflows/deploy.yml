@@ -66,10 +66,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} # Убедитесь, что имя секрета совпадает
           aws-region: us-east-1 # Укажите ваш регион здесь
       - name: Deploy site
+        id: deploy
         uses: ./.github/actions/deploy-s3-javascript
         with:
           bucket: gh-custom-jsaction-hosting
           dist-folder: ./dist
+      - name: Output information
+        run: |
+          echo "URL of website: ${{ steps.deploy.outputs.website-url }}"
   # information:
   #   runs-on: ubuntu-latest
   #   steps:
